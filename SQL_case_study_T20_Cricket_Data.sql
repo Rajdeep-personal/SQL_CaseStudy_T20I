@@ -11,7 +11,7 @@ CREATE TABLE T20I (
     Ground	VARCHAR(50)
 );
 
-truncate table T20I;
+-- truncate table T20I;
 
 INSERT INTO T20I (Team1, Team2, Winner, Margin, MatchDate, Ground) VALUES ('West Indies', 'England', 'West Indies', '5 wickets', STR_TO_DATE('Nov 16, 2024', '%b %d, %Y'), 'Gros Islet');
 INSERT INTO T20I (Team1, Team2, Winner, Margin, MatchDate, Ground) VALUES ('Australia', 'Pakistan', 'Australia', '13 runs', STR_TO_DATE('Nov 16, 2024', '%b %d, %Y'), 'Sydney');
