@@ -3,6 +3,7 @@ This case study shows some practice and data exploration for a few business ques
 The Platform which has been used here is MySQL Workbench.
 The table has been created using CREATE TABLE and insertion of records have been done using INSERT INTO statement. Thereafter total 10 business questions are present and almost for everyone the answers have been solved using multiple alternatives.
 The Business Questions are as follows:
+
 **Q1. Identify the matches played between two specific teams (e.g, India and South Africa) in 2024 and their results.**
 
 **Q2. Find the team with the highest number of wins in 2024 and the total number of matches it won.**
