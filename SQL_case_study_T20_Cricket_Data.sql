@@ -143,7 +143,7 @@ select * from T20I;
 select * from T20I where ((Team1 = 'South Africa' and Team2 = 'India' ) or (Team1 = 'India' and Team2 = 'South Africa')) and year(MatchDate) = 2024;
 -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Q2. Find the team with the highest number of wins in 2024 and the total number of matches it won.
+## Q2. Find the team with the highest number of wins in 2024 and the total number of matches it won. ################################################################
 
 select Winner, Count(*) as 'Number_of_Wins' from T20I where year(MatchDate) = 2024 group by Winner order by Number_of_Wins desc limit 1;
 -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -202,7 +202,7 @@ select * from T20I t join cte c on 1 = 1 and substring_index(t.Margin,' ',1) > c
  and t.margin like '%runs';
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Q5.2. List all the matches where the winning margin was greater than the average margin(wicket) across all the matches ##############################################
+## Q5.2. List all the matches where the winning margin was greater than the average margin(wicket) across all the matches ############################################
 
 select * from T20i where margin like '%wickets' and substring_index(Margin,' ',1) >
 (select avg(substring_index(Margin,' ',1)) as Avg_wicket_margin from T20I where Margin like '%wickets');
@@ -211,9 +211,9 @@ with cte as
 (select avg(substring_index(Margin,' ',1)) as Avg_wicket_margin from T20I where Margin like '%wickets')
 select * from T20I t join cte c on 1 = 1 and substring_index(t.Margin,' ',1) > c.Avg_wicket_margin
  and t.margin like '%wickets';
- -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ -- -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Q6. Find the team with the most wins while chasing a target(wins by wickets)
+## Q6. Find the team with the most wins while chasing a target(wins by wickets) #####################################################################################
 
 with cte as(
 select winner, count(*) as Win_by_Wicket,
@@ -279,6 +279,6 @@ with cte_successful_team as(
 	from T20I where winner not in ('tied','no result')
 	group by ground, winner)
 select ground, winner as most_successful_team, wins from cte_successful_team where rnk = 1 order by ground;
-
+-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
